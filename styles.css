@@ -1,9 +1,54 @@
-/* CSS by ///ADD/// YOUR NAME */
+/* CSS by Ashley Olesen  */
 
 /* Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 /* ///ADD/// CSS Reset */
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 
 /* Root Variables */
@@ -40,23 +85,129 @@ body.dark-mode {
 
 /* ///ADD/// Skip Link Styles */
 
+#skip-link{
+  position: absolute;
+  left: 0;
+  top: -100px;
+  transition: var(--transition);
+}
+
+
 /* ///ADD/// Navigation Styles */
+#nav{
+  margin-top: 1.5rem;
+}
+
+#menu-button{
+  display: inline-block;
+  padding: 1rem;
+  background-color: var(--news-flash);
+  border-radius: 6px;
+  color: var(--watchdog-white);
+  font-weight: 400;
+}
+
+#menu-list li{
+  margin: 0.8rem 0;
+}
+
+#menu a{
+  text-decoration: none;
+  display: block;
+   color: var(--watchdog-white);
+  background-color: var(--truth-text);
+  padding: .5rem .5rem;
+  border-radius: 2rem;
+}
 
 /* ///ADD/// Global Layout Styles */
 
+body{
+  font-family: var(--font-body);
+  background-color: var(--watchdog-white);
+  color: var(--truth-text);
+  line-height: 1.5;
+  transition: var(--transition);
+}
+
+main{
+  padding: 2rem;
+}
+
+
 /* ///ADD/// Global Text Styles */
+
+h1, h2, h3, h4, h5, h6{
+  font-family: var(--font-heading);
+}
+
+header{
+  padding: 2.5rem 1.5rem;
+text-align: center;
+
+background-color: var(--blue-bulletin);
+color: var(--watchdog-white);
+}
+
+video{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+h3{
+  font-size: 1.5rem;
+}
 
 
 /* ///ADD/// medium styles 620px */
 
+@media (min-width: 620px){
+  #menu-list{
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
 
 /* ///ADD/// large styles 920px */
 
+@media (min-width: 920px){
+  #featured-articles{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 
 /* ///ADD/// x-large styles 1024px */
 
+@media (min-width: 1024px){
+  #featured-articles{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
+
+body.dark-mode{
+  background-color: var(--truth-text);
+  color: var(--watchdog-white);
+}
+
+body.dark-mode article{
+  background-color: var(--truth-text);
+  body.dark-mode h3, body.dark-mode p, body.dark-mode label, body.dark-mode a{
+    color: var(--watchdog-white);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  transition: none;
+}
 
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
