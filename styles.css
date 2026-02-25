@@ -200,17 +200,18 @@ body.dark-mode{
 
 body.dark-mode article{
   background-color: var(--truth-text);
-  body.dark-mode h3, body.dark-mode p, body.dark-mode label, body.dark-mode a{
-    color: var(--watchdog-white);
+  
+}
+
+@media (prefers-reduced-motion: reduce){
+  body{
+    transition: none;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  transition: none;
-}
-
-
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
-@supports (selector(:has(*))) {
-
+body:has(#menu-button:checked) #menu-list
+{  
+  display: block;
+}
 }
